@@ -39,25 +39,16 @@ public:
             } else {
                 if (stck.empty()) return false;
                 if (elem == ')') {
-                    if (stck.top() == '(') {
-                        stck.pop();
-                    } else {
-                        return false;
-                    }
+                    if (stck.top() == '(') stck.pop();
+                    else return false;
                 }
                 if (elem == ']') {
-                    if (stck.top() == '[') {
-                        stck.pop();
-                    } else {
-                        return false;
-                    }
+                    if (stck.top() == '[') stck.pop();
+                    else return false;
                 }
                 if (elem == '}') {
-                    if (stck.top() == '{') {
-                        stck.pop();
-                    } else {
-                        return false;
-                    }
+                    if (stck.top() == '{') stck.pop();
+                    else return false;
                 }
             }
         }
