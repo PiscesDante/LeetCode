@@ -6,16 +6,17 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {  
-public:  
-    void deleteNode(ListNode* node) {  
-        ListNode* temp = node->next;  
-        node->val = temp->val;  
-        node->next = temp->next;  
-        delete temp;
-        temp = nullptr;
-    }  
+#include <utility> // std::swap
+
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        std::swap(node->val, node->next->val);
+        ListNode* del = node->next;
+        node->next = node->next->next;
+        delete del;
+    }
 };
 
-// 执行用时：24 ms
-// 已经战胜 3.44 % 的 cpp 提交记录
+// 执行用时：12 ms
+// 已经战胜 95.22 % 的 cpp 提交记录
