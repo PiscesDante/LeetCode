@@ -4,7 +4,7 @@ public:
         int slen = s.size();
         int tlen = t.size();
         if (slen != tlen) return false;
-
+        
         for (int i = 0; i < slen; ++i) {
             auto siter = s2t.find(s[i]);
             auto titer = t2s.find(t[i]);
