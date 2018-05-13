@@ -1,3 +1,10 @@
+/*
+ * 解题思路：
+ * 将两个有序数组归并到一个新的数组之中
+ * 如果新的数组长度为奇数，则取中间的数值
+ * 如果新的数组长度为偶数，则取中间两个数值的平均数
+ */
+
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
