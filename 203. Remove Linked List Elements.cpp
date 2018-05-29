@@ -9,19 +9,21 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
+        if (head == nullptr) return head;
         while (head != nullptr && head->val == val) {
             ListNode* del = head;
             head = head->next;
             delete del;
             del = nullptr;
         }
-        ListNode* prev = nullptr;
-        ListNode* curr = head;
+        if (head == nullptr) return head;
+        ListNode* prev = head;
+        ListNode* curr = head->next;
         while (curr != nullptr) {
             if (curr->val == val) {
                 ListNode* del = curr;
-                prev->next = curr->next;
                 curr = curr->next;
+                prev->next = curr;
                 delete del;
                 del = nullptr;
             } else {
@@ -33,5 +35,5 @@ public:
     }
 };
 
-// 执行用时：36 ms
-// 已经战胜 11.76 % 的 cpp 提交记录
+// 执行用时：24 ms
+// 已经战胜 98.45 % 的 cpp 提交记录
