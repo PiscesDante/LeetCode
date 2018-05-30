@@ -9,7 +9,6 @@
  */
 class Solution {
 public:
-    
     void findDifferentNumber(TreeNode* root) {
         if (root == nullptr) return;
         if (root->val > min_value) {
@@ -30,7 +29,6 @@ public:
     int findSecondMinimumValue(TreeNode* root) {
         min_value = root->val;
         res = root->val;
-        
         findDifferentNumber(root);
         if (res == min_value) return -1;
         findSecondMinimum(root);
@@ -42,8 +40,5 @@ private:
     int res;
 };
 
-
-// 34 / 34 个通过测试用例
-// 状态：通过
 // 执行用时：12 ms
 // Your runtime beats 97.05 % of cpp submissions.

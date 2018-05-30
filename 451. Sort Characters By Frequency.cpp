@@ -7,8 +7,11 @@ public:
     
     string frequencySort(string s) {
         for (char letter : s) {
-            if (store.find(letter) == store.end()) store.insert(pair<char, int>(letter, 1));
-            else store[letter] += 1;
+            if (store.find(letter) == store.end()){
+                store.insert(pair<char, int>(letter, 1));
+            } else {
+                store[letter] += 1;
+            }
         }
         while (!store.empty()) {
             char max_char = 'a';
@@ -19,9 +22,7 @@ public:
                     max_char = elem.first;
                 }
             }
-            for (int i = 0; i < store[max_char]; ++i) {
-                res += max_char;
-            }
+            for (int i = 0; i < store[max_char]; ++i) res += max_char;
             store.erase(max_char);
         }
         return res;
